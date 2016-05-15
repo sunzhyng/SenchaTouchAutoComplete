@@ -94,7 +94,7 @@ Ext.define('Ext.AutocompleteField', {
 			if (!me.config.config.resultsDisplay.inlineConfig) 	me.config.config.resultsDisplay.inlineConfig 				=  {};
 				
 			if (me.stristr(me.config.config.resultsDisplay.inlineConfig.resultsHeight, '%')) 	throw new Error('Unexpected error... resultsDisplay.inlineConfig.resultsHeight cannot be set in percent.PLease use px instead');
-			if (!isNaN(me.config.config.resultsDisplay.inlineConfig.resultsHeight)) 		me.triggerConsole('resultsDisplay.inlineConfig.resultsHeight is not an integer. Switching to default ' +  me.getDefaults().resultsDisplayInlineResultsHeight, 'warn');
+			if (isNaN(me.config.config.resultsDisplay.inlineConfig.resultsHeight)) 		me.triggerConsole('resultsDisplay.inlineConfig.resultsHeight is not an integer. Switching to default ' +  me.getDefaults().resultsDisplayInlineResultsHeight, 'warn');
 			if (!isNaN(me.config.config.resultsDisplay.inlineConfig.resultsHeight)) 		me.config.config.resultsDisplay.inlineConfig.resultsHeight = parseInt(me.config.config.resultsDisplay.inlineConfig.resultsHeight);
 			
 			if (!me.config.config.resultsDisplay.inlineConfig.resultsHeight) 				me.triggerConsole('resultsDisplay.inlineConfig.resultsHeight not set. Switching to default ' +  me.getDefaults().resultsDisplayInlineResultsHeight);
